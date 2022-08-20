@@ -1,0 +1,45 @@
+[package]
+edition = "2018"
+name = "nrf52840-hal-tests"
+publish = false
+version = "0.0.0"
+
+[[test]]
+name = "gpio-input-floating"
+harness = false
+
+#[[test]]
+#name = "gpio-input-pulled"
+#harness = false
+#
+#[[test]]
+#name = "gpio-output-push-pull"
+#harness = false
+#
+#[[test]]
+#name = "gpio-output-open-drain"
+#harness = false
+#
+#[[test]]
+#name = "serial"
+#harness = false
+#
+[dev-dependencies]
+cortex-m = "0.7.0"
+defmt = "*"
+defmt-rtt = "*"
+defmt-test = "*"
+nrf52840-hal = { path = ".." }
+panic-probe = { version = "*", features = ["print-defmt"] }
+
+[features]
+# enable all defmt logging levels
+default = ["defmt-trace"]
+
+# do not modify these features
+defmt-default = []
+defmt-trace = []
+defmt-debug = []
+defmt-info = []
+defmt-warn = []
+defmt-error = []
